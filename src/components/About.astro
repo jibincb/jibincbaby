@@ -6,7 +6,7 @@ import ProfilePic from "../assets/jibin.jpg";
   class="flex flex-col items-center bg-white/10 backdrop-blur-md text-white mt-10 w-full rounded-4xl"
 >
   <h1 class="text-5xl font-bold mb-4 mt-4">About Me</h1>
-  <div class="flex">
+  <div class="flex flex-col-reverse lg:flex-row">
     <p class="text-lg max-w-2xl text-left p-4 m-4">
       I'm a software developer and AI enthusiast driven by curiosity and a love
       for building impactful tech. I thrive at the intersection of software
@@ -21,11 +21,11 @@ import ProfilePic from "../assets/jibin.jpg";
       frontend, structuring a backend API, or experimenting with LLM-powered
       tools, I’m always pushing boundaries and learning something new.
     </p>
-    <div>
+    <div class="flex items-center justify-center mb-4">
       <img
         src={ProfilePic.src}
         alt="Jibin C Baby"
-        class="rounded-full w-64 h-64 ml-4 shadow-lg items-center justify-center"
+        class="rounded-full lg-w-64 h-64 ml-4 shadow-lg items-center justify-center"
       />
     </div>
   </div>
