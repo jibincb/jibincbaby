@@ -11,7 +11,6 @@
         </div>
       </div>
 
-      <!-- Desktop navigation -->
       <nav class="hidden md:flex space-x-8 items-center">
         <a
           href="#"
@@ -40,13 +39,11 @@
         >
       </nav>
 
-      <!-- Mobile menu button -->
       <div class="md:hidden flex items-center">
         <button
           id="mobile-menu-button"
           class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
         >
-          <!-- Menu icon (when closed) -->
           <svg
             id="menu-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +58,7 @@
               stroke-width="2"
               d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <!-- X icon (when open) -->
+
           <svg
             id="close-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +111,6 @@
 </header>
 
 <script>
-  // Client-side JavaScript for mobile menu toggle
   document.addEventListener("DOMContentLoaded", () => {
     const mobileMenuButton = document.getElementById("mobile-menu-button");
     const mobileMenu = document.getElementById("mobile-menu");
