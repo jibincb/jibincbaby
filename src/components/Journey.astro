@@ -1,0 +1,34 @@
+---
+import { journey } from "../data/journey";
+---
+
+<div class="flex flex-col justify-center">
+  <h1 class="text-5xl font-bold mb-12 mt-16 text-center justify-center">
+    My Journey
+  </h1>
+  {
+    journey.experience.map((exp) => {
+      return (
+        <div class="bg-white/10 backdrop-blur-md text-white rounded-4xl p-8 mb-10 w-[70%] mx-auto">
+          <h4 class="italic">{exp.period}</h4>
+          <h2 class="text-lg font-bold mb-5 text-center">
+            Company: {exp.company}
+          </h2>
+          <h2 class="text-lg mb-5 text-center">Position: {exp.title}</h2>
+          <h2 class="text-md italic mb-5 text-center">{exp.description}</h2>
+        </div>
+      );
+    })
+  }
+  {
+    journey.education.map((edu) => {
+      return (
+        <div class="bg-white/10 backdrop-blur-md text-white rounded-4xl p-8 mb-10 w-[70%] mx-auto">
+          <h4 class="italic">{edu.period}</h4>
+          <h2 class="text-lg font-bold mb-5 text-center">{edu.degree}</h2>
+          <h3 class="text-lg mb-5 text-center">{edu.institution}</h3>
+        </div>
+      );
+    })
+  }
+</div>
