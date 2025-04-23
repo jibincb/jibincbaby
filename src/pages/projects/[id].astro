@@ -1,0 +1,48 @@
+---
+import { projects } from "../../data/projects";
+import Layout from "../../layouts/Layout.astro";
+import { Github } from "@lucide/astro";
+
+export async function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { id: project.id },
+  }));
+}
+
+const { id } = Astro.params;
+const project = projects.find((p) => p.id === id);
+console.log(projects, id, project);
+---
+
+<Layout title={project?.title}>
+  <h1 class="text-5xl font-bold mb-4 mt-16 text-center justify-center">
+    {project?.title}
+  </h1>
+  <div
+    class="flex flex-col justify-center items-center mt-16 bg-white/10 backdrop-blur-md text-white rounded-4xl p-8 w-[70%] mx-auto"
+  >
+    <div>
+      <p class="text-xl mb-4 text-left p-6">{project?.description}</p>
+      <div class="flex flex-wrap gap-2 mb-4">
+        {
+          project?.tech.map((tech) => (
+            <span class="bg-white/20 px-3 py-1 rounded-full text-sm">
+              {tech}
+            </span>
+          ))
+        }
+      </div>
+      <div class="mt-auto text-center">
+        <a
+          href={project?.githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 transition-colors px-4 py-2 rounded-full"
+        >
+          View on GitHub
+          <Github />
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

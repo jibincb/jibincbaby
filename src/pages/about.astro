@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutMe from "../components/About.astro";
+import MyJourney from "../components/Journey.astro";
+---
+
+<Layout title="About Me">
+  <div class="flex mx-auto mt-10 flex-col justify-center items-center">
+    <div
+      class="w-[70%] mx-auto mt-10 flex flex-col justify-center items-center"
+    >
+      <AboutMe />
+    </div>
+    <div class="w-[80%] mt-10 flex flex-col justify-center items-center">
+      <MyJourney />
+    </div>
+  </div>
+</Layout>

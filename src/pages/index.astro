@@ -3,10 +3,9 @@
 import About from "../components/About.astro";
 import Hero from "../components/Hero.astro";
 import Journey from "../components/Journey.astro";
+import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Import project data
 ---
 
 <Layout title="Home">
@@ -19,9 +18,15 @@ import Layout from "../layouts/Layout.astro";
   <section class="w-[80%] mx-auto mt-10">
     <Skills />
   </section>
-  <!-- <section class="featured-projects">
-    <h2>Featured Work</h2>
-  </section> -->
+  <section class="w-[80%] mx-auto mt-10">
+    <Projects />
+    <!-- <a href="projects/" class="flex">See more</a> -->
+    <a
+      href="projects/"
+      class="flex w-24 text-center items-center justify-center mx-auto px-3 py-2 rounded-md text-base font-medium bg-white/20 hover:bg-white/30 transition-colors mt-6"
+      >See more</a
+    >
+  </section>
   <section class="jounney w-[80%] mx-auto mt-10">
     <Journey />
   </section>
