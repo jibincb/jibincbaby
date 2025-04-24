@@ -1,13 +1,19 @@
 ---
-import ProfilePic from "../assets/jibin.jpg";
+import ProfilePic from "../assets/jibin1.jpg";
+import SocialLinks from "./SocialLinks.astro";
 ---
 
 <div
-  class="flex flex-col items-center bg-white/10 backdrop-blur-md text-white mt-10 w-full rounded-4xl"
+  class="flex flex-col items-center bg-white/10 backdrop-blur-md text-white w-full rounded-4xl"
 >
-  <h1 class="text-5xl font-bold mb-4 mt-4">About Me</h1>
+  <h1 class="md:text-5xl text-3xl font-bold mb-4 mt-4 fade-in from-left">
+    About Me
+  </h1>
   <div class="flex flex-col-reverse lg:flex-row">
-    <p class="text-lg max-w-2xl text-left p-4 m-4">
+    <p
+      class="md:text-lg text-md max-w-2xl text-left p-4 md:m-4 fade-in from-bottom"
+      style="transition-delay: 200ms;"
+    >
       I'm a software developer and AI enthusiast passionate about building
       meaningful, forward-thinking technology. With a strong foundation in
       React, Django, and Astro, I create responsive, scalable web applications
@@ -16,12 +22,17 @@ import ProfilePic from "../assets/jibin.jpg";
       agents, and I continuously explore how AI can automate workflows, enhance
       creativity, and shape intelligent systems that solve real-world problems.
     </p>
-    <div class="flex items-center justify-center mb-4">
+    <div
+      class="flex items-center justify-center mb-4 fade-in from-right"
+      style="transition-delay: 200ms;"
+    >
       <img
         src={ProfilePic.src}
         alt="Jibin C Baby"
-        class="rounded-full lg-w-64 h-64 shadow-lg items-center justify-center"
+        class="rounded-full md:w-64 md:h-64 w-38 h-38 shadow-lg items-center justify-center"
       />
     </div>
   </div>
+
+  <SocialLinks />
 </div>

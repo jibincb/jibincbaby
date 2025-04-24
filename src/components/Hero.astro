@@ -3,63 +3,17 @@ import HeroImage from "../assets/hero.jpeg";
 ---
 
 <div
-  class="relative w-full h-[30rem] flex flex-col items-center justify-center font-bold text-white bg-cover bg-center"
+  class="relative w-full md:h-[30rem] h-[20rem] flex flex-col items-center justify-center font-bold text-white bg-cover bg-center"
   style={`background-image: url(${HeroImage.src}); background-size: cover; background-position: center;`}
 >
   <div
     class="background-gradient absolute inset-0 bg-gradient-to-tl from-black via-gray-900 to-black opacity-70 z-10"
   >
   </div>
-  <div class="relative z-20 font-mono text-5xl">
+  <div class="relative z-20 font-mono md:text-5xl text-3xl">
     Hi, I'm <span class="neon-text">Jibin C Baby</span>
   </div>
-  <div class="z-20 text-xl mt-6 italic">
+  <div class="z-20 md:text-xl text-lg mt-6 italic">
     Transforming ideas into digital reality
   </div>
 </div>
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    // array with texts to type in typewriter
-    var dataText = ["Jibin C Baby"];
-
-    // type one text in the typwriter
-    // keeps calling itself until the text is finished
-    function typeWriter(text, i, fnCallback) {
-      // chekc if text isn't finished yet
-      if (i < text.length) {
-        // add next character to h1
-        document.querySelector(".name").innerHTML =
-          text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
-
-        // wait for a while and call this function again for next character
-        setTimeout(function () {
-          typeWriter(text, i + 1, fnCallback);
-        }, 100);
-      }
-      // text finished, call callback if there is a callback function
-      else if (typeof fnCallback == "function") {
-        // call callback after timeout
-        setTimeout(fnCallback, 700);
-      }
-    }
-    // start a typewriter animation for a text in the dataText array
-    function StartTextAnimation(i) {
-      if (typeof dataText[i] == "undefined") {
-        setTimeout(function () {
-          StartTextAnimation(0);
-        }, 200);
-      }
-      // check if dataText[i] exists
-      if (i < dataText[i].length) {
-        // text exists! start typewriter animation
-        typeWriter(dataText[i], 0, function () {
-          // after callback (and whole text has been animated), start next text
-          StartTextAnimation(i + 1);
-        });
-      }
-    }
-    // start the text animation
-    StartTextAnimation(0);
-  });
-</script>

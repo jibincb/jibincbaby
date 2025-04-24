@@ -2,6 +2,7 @@
 // src/layouts/BaseLayout.astro
 import Header from "../components/Header.astro";
 import "../styles/global.css";
+import "../styles/animations.css";
 const { title } = Astro.props;
 ---
 
@@ -25,4 +26,40 @@ const { title } = Astro.props;
       <slot />
     </main>
   </body>
+  <script is:inline>
+    // Alternative approach
+    document.addEventListener("DOMContentLoaded", () => {
+      setupAnimations();
+    });
+
+    // You can also call this directly if needed
+    function setupAnimations() {
+      const elements = document.querySelectorAll(".fade-in");
+      console.log("Found fade-in elements:", elements, elements.length);
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("vi");
+              observer.unobserve(entry.target);
+            } else {
+              entry.target.classList.remove("vi");
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      elements.forEach((el) => observer.observe(el));
+    }
+
+    // Call immediately in case the DOM is already loaded
+    if (
+      document.readyState === "interactive" ||
+      document.readyState === "complete"
+    ) {
+      setupAnimations();
+    }
+  </script>
 </html>

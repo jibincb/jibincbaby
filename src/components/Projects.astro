@@ -1,27 +1,48 @@
 ---
 import { projects } from "../data/projects";
+
+const { home = "false" } = Astro.props;
+let displayedProjects = projects;
+if (home === "true") {
+  displayedProjects = projects.slice(0, 2);
+}
 ---
 
 <div class="flex flex-col">
-  <h1 class="text-5xl font-bold mb-4 mt-16 text-center justify-center">
+  <h1
+    class="md:text-5xl text-3xl font-bold md:mb-12 mb-5 md:mt-16 mt-10 text-center justify-center fade-in from-left"
+  >
     Projects
   </h1>
 
-  <div class="grid md:grid-cols-2 gap-6 justify-center mt-10 items-stretch">
+  <div class="grid md:grid-cols-2 gap-6 justify-center items-stretch mb-10">
     {
-      projects.map((project) => {
+      displayedProjects.map((project) => {
         return (
           <div class="flex flex-col bg-white/10 backdrop-blur-md text-white rounded-4xl p-8">
-            <h2 class="text-3xl font-bold mb-3 text-center">{project.title}</h2>
-            <p class="text-xl mb-4 text-center">{project.excerpt}</p>
-            <div class="flex flex-wrap gap-2 justify-center mb-4">
+            <h2 class="md:text-3xl text-xl font-bold mb-3 text-center fade-in from-bottom">
+              {project.title}
+            </h2>
+            <p
+              class="md:text-xl text-md mb-4 text-center fade-in from-bottom"
+              style="transition-delay: 100ms;"
+            >
+              {project.excerpt}
+            </p>
+            <div
+              class="flex flex-wrap gap-2 justify-center mb-4 fade-in from-bottom"
+              style="transition-delay: 200ms;"
+            >
               {project.tech.map((tech) => (
-                <span class="bg-white/20 px-3 py-1 rounded-full text-sm">
+                <span class="bg-white/20 px-3 py-1 rounded-full md:text-sm text-xs">
                   {tech}
                 </span>
               ))}
             </div>
-            <div class="mt-auto text-center">
+            <div
+              class="mt-auto text-center fade-in from-bottom"
+              style="transition-delay: 300ms;"
+            >
               <a
                 href={`/projects/${project.id}`}
                 target="_blank"

@@ -1,5 +1,4 @@
 ---
-// src/pages/index.astro
 import About from "../components/About.astro";
 import Hero from "../components/Hero.astro";
 import Journey from "../components/Journey.astro";
@@ -15,19 +14,21 @@ import Layout from "../layouts/Layout.astro";
   <section class="w-[80%] mx-auto mt-10">
     <About />
   </section>
-  <section class="jounney w-[80%] mx-auto mt-10">
+  <section class="w-[80%] mx-auto mt-10">
     <Journey />
   </section>
   <section class="w-[80%] mx-auto mt-10">
     <Skills />
   </section>
   <section class="w-[80%] mx-auto mt-10">
-    <Projects />
+    <Projects home="true" />
     <!-- <a href="projects/" class="flex">See more</a> -->
     <a
       href="projects/"
-      class="flex w-24 text-center items-center justify-center mx-auto px-3 py-2 rounded-md text-base font-medium bg-white/20 hover:bg-white/30 transition-colors mt-6"
-      >See more</a
+      class="flex gap-1 w-fit text-center items-center justify-center mx-auto px-3 py-2 rounded-md text-base font-medium bg-white/20 hover:bg-white/30 transition-colors mt-6 mb-24 fade-in from-bottom"
     >
+      <span>See more</span>
+      <span>&gt;</span>
+    </a>
   </section>
 </Layout>

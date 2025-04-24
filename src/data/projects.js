@@ -17,4 +17,23 @@ export const projects = [
     tech: ["React", "Tailwind"],
     githubUrl: "https://github.com/jibincb/halfdayhire",
   },
+  {
+    id: "3",
+    title: "Portfolio Website",
+    excerpt: "My personal portfolio website",
+    description:
+      "This is my personal portfolio website, built using Astro and Tailwind CSS. It showcases my skills, projects, and experience. The website is designed to be responsive and user-friendly, with a clean and modern layout.",
+    tech: ["Astro", "Tailwind"],
+    githubUrl: "https://github.com/jibincb/jibincbaby",
+  },
+  {
+    id: "4",
+    title: "Face recognizer",
+    excerpt:
+      "Real-time face recognition detection and verification using MTCNN and DeepFace",
+    description:
+      "This project is a real-time face recognition detection and verification system built using MTCNN and DeepFace. It uses the MTCNN model for face detection and the DeepFace library for face recognition and verification from the known face database. The system is designed to be fast and accurate, making it suitable for real-time applications.",
+    tech: ["MTCNN", "DeepFace", "OpenCV"],
+    githubUrl: "https://github.com/jibincb/face-identification",
+  },
 ];
