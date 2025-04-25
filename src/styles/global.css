@@ -16,3 +16,6 @@
       0 0 80px #00d4ff, 0 0 160px #00d4ff;
   }
 }
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+}
